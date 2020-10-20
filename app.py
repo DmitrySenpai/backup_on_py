@@ -1,6 +1,7 @@
 import os
 import datetime
 import time
+import shutil
 from distutils.dir_util import copy_tree
 
 path_save_backup = ".\\BACKUP\\"
@@ -36,5 +37,5 @@ while True:
             copy_tree(path_import_files, path_save_backup + x1)
             for dir_sel in os.listdir(path_save_backup):
                 if (check_term(x1, dir_sel, count_backup_day) == 1):
-                    os.rmdir(path_save_backup + dir_sel)
+                    shutil.rmtree(path_save_backup + dir_sel)
             break
