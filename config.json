@@ -1,0 +1,5 @@
+{
+    "path_save_backup": ".\\BACKUP\\",
+    "path_import_files": ".\\SIMPLE\\",
+    "count_backup_day": 5
+}
