@@ -38,13 +38,11 @@ def list_files(startpath):
     dir_all = {}
     for root, dirs, files in os.walk(startpath):
         path_files = root.replace(startpath , '\\')
-        #path_files = root + "\\"
-        if (len(files) != 0):
-            files_md5 = {}
-            for x in files:
-                path_full = root + "\\" + x
-                md5_files_d = md5_files(path_full)
-                files_md5.update({x: {'name': x, 'md5': hashlib.md5(str(x+md5_files_d).encode()).hexdigest(),'name_md5': hashlib.md5(x.encode()).hexdigest(), 'path_md5': hashlib.md5(path_files.encode()).hexdigest(), 'files_md5': md5_files_d}})
+        files_md5 = {}
+        for x in files:
+            path_full = root + "\\" + x
+            md5_files_d = md5_files(path_full)
+            files_md5.update({x: {'name': x, 'md5': hashlib.md5(str(x+md5_files_d).encode()).hexdigest(),'name_md5': hashlib.md5(x.encode()).hexdigest(), 'path_md5': hashlib.md5(path_files.encode()).hexdigest(), 'files_md5': md5_files_d}})
         dir_all.update({path_files: files_md5})
     return dir_all
 
