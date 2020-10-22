@@ -8,6 +8,8 @@ Before the first run, edit the "config.json" file:
 
 ```"count_backup_day": 5``` - The maximum period of one backup. (Specified in days)
 
+# Import Backup
+
 To import the backup, use this command:
 
 ```sh
