@@ -129,4 +129,8 @@ while True:
                 if (is_empty_array(array_file_all_md5, xx3) == False):
                     os.remove(STORAGE_BACKUP + xx3)
 
+            for folder in list(os.walk(STORAGE_BACKUP))[1:]:
+                if not folder[2]:
+                    os.rmdir(folder[0])
+                    
             break
